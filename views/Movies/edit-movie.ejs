@@ -8,19 +8,27 @@
     <label for="">Genre:
         <input type="text" name="genre" value="<%= movieEdit.genre %>" >
     </label>
-
+    
     <label for="">Plot:
         <input type="text" name="plot" value="<%= movieEdit.plot %>" >
     </label>
-    <form action="/movies/<%= movieEdit.id%>/edit" method="POST">
-            <label for="">Actors:
-                <input type="text" name="cast" >
-            </label>
-            <button type="submit">Add actor</button>
-    </form>
+    <label for="">Actors:
+        <select name="cast" multiple>
+            
+            <% celebs.forEach(celeb => { %>
+                <% if (!movieEdit.cast.includes(celeb.id)){%>
+                <option value="<%= celeb.id%>"><%= celeb.name%></option>
+             
+               <% } else { %> 
+                <option value="<%= celeb.id%>" selected><%= celeb.name%></option>
+                <% } %>
+            <% }) %>
+        </select>
+    </label>
+            
         
     
 
-    <button type="submit">Edit</button>
+    <button type="submit">Save changes</button>
 
 </form>

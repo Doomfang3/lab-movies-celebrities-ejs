@@ -4,6 +4,8 @@
 const express = require('express')
 const router = express.Router()
 const Movie = require("../models/Movie.model")
+const Celebrity = require("../models/Celebrity.model")
+
 // all your routes here
 
 router.get('/', async (req, res)=>{
@@ -23,6 +25,7 @@ router.post('/create', async (req, res)=>{
 
 router.get('/:id', async (req, res)=>{
     const {id} = req.params
+  
     const movieDetails = await Movie.findById(id)
     //console.log(movieDetails)
     const castInfo = await movieDetails.populate('cast')
@@ -39,8 +42,10 @@ router.post('/:id/delete', async (req, res)=>{
 
 router.get('/:id/edit', async (req, res)=>{
     const {id} = req.params
+    const celebs = await Celebrity.find()
     const movieEdit = await Movie.findById(id)
-    res.render('../views/Movies/edit-movie.ejs', {movieEdit})
+    // const movieEditWithActors = await movieEdit.populate('cast')
+    res.render('../views/Movies/edit-movie.ejs', {movieEdit, celebs})
 })
 
 router.post('/:id/edit', async (req, res)=>{
