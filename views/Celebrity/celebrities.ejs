@@ -1,0 +1,11 @@
+<h1>Celebrities</h1>
+<div>
+    <% celebs.forEach(({name, occupation, catchPhrase}) => { %>
+        <div>
+            <p><strong>Name: </strong><%= name %> </p>
+            <p><strong>Occupation: </strong><%= occupation %> </p>
+            <p><strong>Catchphrase: </strong><%= catchPhrase %> </p>
+
+        </div>
+    <% }) %>
+</div>
