@@ -14,8 +14,9 @@ router.get('/', async (req, res)=>{
     res.render('../views/Movies/movies.ejs', {movies})
 })
 
-router.get('/create', (req, res)=>{
-    res.render('../views/Movies/new-movie.ejs')
+router.get('/create', async (req, res)=>{
+    const celebs = await Celebrity.find()
+    res.render('../views/Movies/new-movie.ejs', {celebs})
 })
 
 router.post('/create', async (req, res)=>{

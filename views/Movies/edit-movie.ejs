@@ -14,7 +14,6 @@
     </label>
     <label for="">Actors:
         <select name="cast" multiple>
-            
             <% celebs.forEach(celeb => { %>
                 <% if (!movieEdit.cast.includes(celeb.id)){%>
                 <option value="<%= celeb.id%>"><%= celeb.name%></option>

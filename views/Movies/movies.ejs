@@ -1,9 +1,9 @@
-<h1>Movies</h1>
-<div>
+<h2>Movies</h2>
+<div class="list-movie">
     <% movies.forEach(({title, id}) => { %>
         <div>
             <p><strong>Title: </strong><%= title %></p>
-            <button><a href="/movies/<%= id %>">Movie details</a></button>
+            <button><a href="/movies/<%= id %>" class="movie-button">Movie details</a></button>
         </div>
     <% }) %>
 </div>
