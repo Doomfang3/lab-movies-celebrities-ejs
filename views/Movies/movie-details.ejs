@@ -1,0 +1,19 @@
+<h1>Movie Details</h1>
+<div>
+    <div>
+        <p><strong>Title: </strong><%= castInfo.title %></p>
+        <p><strong>Genre: </strong><%= castInfo.genre %></p>
+        <p><strong>Plot: </strong><%= castInfo.plot %></p>
+        <p><strong>cast: </strong></p>
+        <ul>
+            <% castInfo.cast.forEach(cast =>{%>
+                <li><%= cast.name%></li>
+            <%}) %>
+        </ul>
+        <form action="/movies/<%= castInfo._id %>/delete" method="POST">
+            <button type="submit">Delete Movie</button>
+        </form>
+        <button><a href="/movies">Back to all movies</a></button>
+        
+    </div>
+</div>

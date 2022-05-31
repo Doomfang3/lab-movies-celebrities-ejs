@@ -7,7 +7,7 @@ const Celebrity = require("../models/Celebrity.model")
 // all your routes here
 router.get('/', async (req, res)=>{
     const celebs = await Celebrity.find()
-    console.log("all celebs" , celebs)
+    //console.log("all celebs" , celebs)
     res.render('../views/Celebrity/celebrities.ejs', {celebs})
 })
 
@@ -17,7 +17,6 @@ router.get('/create', (req, res)=>{
 
 router.post('/create', async (req, res)=>{
     const newCeleb = await Celebrity.create(req.body)
-    console.log(req.body)
     res.redirect('/celebrities')
 })
 
