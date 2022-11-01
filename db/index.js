@@ -8,8 +8,7 @@ const movie = require("../models/Movie.model")
 // If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
 
 
-let newcelebs =
-  [{
+let newcelebs = new Schema [{
     name: "Harry Styles",
     occupation: "Singer",
     catchPhrase: "it's a family show, or is it?"
@@ -31,7 +30,7 @@ let newcelebs =
   }
   ]
 
-let newMovies = [
+let newMovies = new Schema [
   {
     title: "batman",
     Genre: "action",
