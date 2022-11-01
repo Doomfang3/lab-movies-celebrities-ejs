@@ -1,0 +1,13 @@
+<h2>Add your movie</h2>
+<form method="POST" action="/movies/create">
+  <input type="text" placeholder="Title" name="title" />
+  <input type="text" placeholder="Genre" name="genre"/>
+  <input type="text" placeholder="plot" name="plot"/>
+  <select name="cast" style="width: 200px; height: 300px; vertical-align: top;" multiple>
+    <% celebList.forEach(celeb => { %>
+        <option value="<%= celeb._id %>"><%= celeb.name %></option>
+    <% }); %>
+  </select>
+  <!-- <input type="text" placeholder="cast" name="cast"/> -->
+  <button type="submit">Send</button>
+</form>
