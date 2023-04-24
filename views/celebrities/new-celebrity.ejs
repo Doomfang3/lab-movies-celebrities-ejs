@@ -1,0 +1,22 @@
+<h2>Create a celebrity here!!!</h2>
+<form
+	action="/celebrities/create"
+	method="POST"
+	style="
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+	"
+>
+	<label for="celeb-name"
+		>Name:<input type="text" id="celeb-name" name="name"
+	/></label>
+	<label for="celeb-occupation"
+		>Occupation:<input type="text" id="celeb-occupation" name="occupation"
+	/></label>
+	<label for="celeb-catch-phrase"
+		>Catch Phrase:<input type="text" id="celeb-catch-phrase" name="catchPhrase"
+	/></label>
+	<button type="submit">Create</button>
+</form>

@@ -1,0 +1,30 @@
+<h2>Edit movie</h2>
+<form
+	action="/movies/<%- movie.id %>/edit"
+	method="POST"
+	style="
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+	"
+>
+	<label for="movie-title"
+		>Title:<input type="text" id="movie-title" name="title" value="<%- movie.title %>"
+	/></label>
+	<label for="movie-genre"
+		>Genre:<input type="text" id="movie-genre" name="genre" value="<%- movie.genre %>"
+	/></label>
+	<label for="movie-plot"
+		>Plot:<input type="text" id="movie-plot" name="plot" value="<%- movie.plot %>"
+	/></label>
+	<label for="movie-cast"
+		>Cast:<select name="cast" id="movie-cast" multiple>
+			<% allCelebrities.forEach(celeb => { %>
+			<option <%- movie.cast.includes(celeb.id)? "selected" : ""  %> value="<%- celeb.id %>"><%- celeb.name %></option>
+			<% }) %>
+		</select>
+	</label>
+	<button type="submit">Edit</button>
+</form>
+<option value=""></option>
