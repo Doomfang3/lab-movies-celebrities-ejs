@@ -3,5 +3,11 @@
     <label>Title: <input type="text" name="title"></label>
     <label>Genre: <input type="text" name="genre"></label>
     <label>Plot: <input type="text" name="plot"></label>
+    <select name="cast" multiple>
+        <% celebrities.forEach(celebrity=> { %>
+            <option value="<%- celebrity.id %>"><%- celebrity.name %></option>
+            <% }) %>
+
+    </select>
     <button type="submit">Submit</button>
 </form>

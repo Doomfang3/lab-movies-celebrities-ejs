@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Celebrity = require("../models/Celebrity.model");
 
 // all your routes here
+//Iteration #3: Adding New Celebrities
 router.get("/create", async (req, res) => {
   res.render("celebrities/new-celebrity");
 });
