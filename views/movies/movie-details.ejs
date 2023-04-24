@@ -1,0 +1,15 @@
+<h2>Movie details</h2>
+<h3>Movie Title : <%- movie.title %></h3>
+<p>Movie Genre : <%- movie.genre %></p>
+<p>Movie Plot : <%- movie.plot %></p>
+<h4>Cast's</h4>
+<% movie.cast.forEach((cas)=> { %>
+    <p>Celebrity Name : <%- cas.name %></p>
+    <p>Celebrity Occupation : <%- cas.occupation %></p>
+    <p>Celebrity Catch Phrase : <%- cas.catchPhrase %></p>
+    <% }) %>
+
+        <form action="/movies/<%- movie.id %>/delete " method="post">
+            <button type="submit">Delete</button>
+        </form>
+        <a href="/movies/<%- movie.id %>/edit">Edit</a>
