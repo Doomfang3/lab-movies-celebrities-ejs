@@ -1,0 +1,14 @@
+<h1>New movie</h1>
+<form method="POST" style="display: grid; grid-template: auto / 1fr">
+  <label>Title: <input name="title" /></label>
+  <label>Genre: <input name="Genre"></label>
+  <label>Plot <input name="plot" /></label>
+  <label for="">Cast: <select name="cast" id="">
+    <% listCelebs.forEach(eachCeleb => { %>
+    <option value="<%= eachCeleb._id %>"><%= eachCeleb.name %></option>
+    <% }) %>
+</select></label>
+  
+  
+  <button type="submit">Create movie</button>
+</form>
