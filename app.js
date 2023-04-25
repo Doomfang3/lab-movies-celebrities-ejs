@@ -1,4 +1,8 @@
 // ℹ️ Gets access to environment variables/settings
+const mongoose = require('mongoose')
+
+mongoose.connect("mongodb://localhost")
+
 // https://www.npmjs.com/package/dotenv
 require('dotenv/config')
 
